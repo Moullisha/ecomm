@@ -51,6 +51,11 @@ userSchema.virtual('password')
 
 // adding methods to Schema's methods object
 userSchema.methods = {
+    // authenticates if the password entered by user matched the hashed password or not after encrypting
+    authenticate: function(plainPassword) {
+        return this.encryptPassword(plainPassword) === this.hashedPassword;
+    },
+
     encryptPassword: function(password) {
         if(!password){
             return "";
