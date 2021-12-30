@@ -1,0 +1,30 @@
+{
+  "name": "ecomm",
+  "version": "1.0.0",
+  "description": "An E-commerce website built from scratch which allows customers to wide through a broad collection of items to purchase from, adding items to wishlist/cart.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moullisha/ecomm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moullisha/ecomm/issues"
+  },
+  "homepage": "https://github.com/Moullisha/ecomm#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  }
+}
