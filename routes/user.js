@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const { signup, signin, signout } = require("../controllers/user");
-const { userSignupValidator } = require("../validator/index")
 
-console.log("Inside routes")
-router.post('/signup', userSignupValidator, function(req, res) {
-    console.log("Inside routes/user")
-    signup;
+const { requireSignIn, isAdmin, isAuth } = require('../controllers/auth')
+const { userById } = require('../controllers/user')
+
+router.get('/secret/:userId', requireSignIn, isAuth, isAdmin, (req, res) => {
+    res.json({
+        user: req.profile
+    })
 })
-
-router.post('/signin', signin);
-router.get('/signout', signout);
+router.param('userId', userById);
 
 module.exports = router;
