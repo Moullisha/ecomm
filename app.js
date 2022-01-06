@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require("express-validator");
+const cors = require("cors");
 
 // importing routes
 const authRoutes = require("./routes/auth");
@@ -30,6 +31,7 @@ app.use(morgan("dev"))
 app.use(bodyParser.json()) // to convert req body into json object
 app.use(cookieParser)
 app.use(expressValidator())
+app.use(cors()); // required to handle incoming requests from a different port
 
 // routes middleware
 app.use('/api', authRoutes)
